@@ -1,3 +1,4 @@
+//cd C:\Program Files\MongoDB\Server\3.6\bin
 //mongod.exe --dbpath \Users\dennis\mongo-data
 const {MongoClient, ObjectID} = require("mongodb");
 
