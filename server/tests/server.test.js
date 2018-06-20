@@ -1,8 +1,8 @@
-const expect = require('expect');
-const request = require('supertest');
+const expect = require("expect");
+const request = require("supertest");
 
-const {app} = require('./../server');
-const {Todo} = require('./../models/todo');
+const {app} = require("./../server");
+const {Todo} = require("./../models/todo");
 
 const todos = [{
   text: "First test todo"
@@ -16,12 +16,12 @@ beforeEach((done) => {
   }).then(() => done());
 });
 
-describe('POST /todos', () => {
-  it('should create a new todo', (done) => {
-    let text = 'Test todo text';
+describe("POST /todos", () => {
+  it("should create a new todo", (done) => {
+    let text = "Test todo text";
 
     request(app)
-      .post('/todos')
+      .post("/todos")
       .send({text})
       .expect(200)
       .expect((res) => {
@@ -40,9 +40,9 @@ describe('POST /todos', () => {
       });
   });
 
-  it('should not create todo with invalid body data', (done) => {
+  it("should not create todo with invalid body data", (done) => {
     request(app)
-      .post('/todos')
+      .post("/todos")
       .send({})
       .expect(400)
       .end((err, res) => {
